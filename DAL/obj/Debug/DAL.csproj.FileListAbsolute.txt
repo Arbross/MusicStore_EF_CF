@@ -1,0 +1,15 @@
+C:\Users\victor\Desktop\ExamEF\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\victor\Desktop\ExamEF\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\DAL.dll.config
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\DAL.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\DAL.pdb
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\EntityFramework.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\EntityFramework.xml
+C:\Users\victor\Desktop\ExamEF\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\victor\Desktop\ExamEF\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\victor\Desktop\ExamEF\DAL\obj\Debug\DAL.dll
+C:\Users\victor\Desktop\ExamEF\DAL\obj\Debug\DAL.pdb

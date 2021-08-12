@@ -1,0 +1,242 @@
+﻿<Window x:Class="ExamEF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamEF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid x:Name="WinMain">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnLogin" BorderThickness="0" FontSize="30" Margin="10" Content="Login" Grid.Column="1" Click="btnLogin_Click"/>
+                <Button Name="btnRegister" BorderThickness="0" FontSize="30" Margin="10" Content="Register" Grid.Column="2" Click="btnRegister_Click"/>
+                <Button Name="btnExit" BorderThickness="0" FontSize="30" Margin="10" Content="Exit" Grid.Column="3" Click="btnExit_Click"/>
+            </Grid>
+            <Grid x:Name="WinLogin" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Login" FontSize="40"/>
+                <TextBox Name="LoginTBR" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" MinWidth="500" MinHeight="60"/>
+                <TextBox Name="PasswordTBR" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" MinWidth="500" MinHeight="60"/>
+            </Grid>
+            <Grid x:Name="WinRegister">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Registration" FontSize="40"/>
+                <TextBox Name="LoginTB" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" MinWidth="500" MinHeight="60"/>
+                <TextBox Name="PasswordTB" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" MinWidth="500" MinHeight="60"/>
+            </Grid>
+        </Grid>
+        <Grid x:Name="WinPlate" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Margin="5" Name="ShowPanel" BorderThickness="0"/>
+            <DataGrid Margin="5" Name="ShowPanelOther" BorderThickness="0" Visibility="Hidden"/>
+            <DataGrid Margin="5" Name="ShowPanelOtherGenres" BorderThickness="0" Visibility="Hidden"/>
+            <DataGrid Margin="5" Name="ShowPanelOtherSearch" BorderThickness="0" Visibility="Hidden"/>
+            <DataGrid Margin="5" Name="ShowPanelOtherSavePlate" BorderThickness="0" Visibility="Hidden"/>
+            <Grid Name="RightMain" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button FontSize="40" Name="Buy" Content="Buy" BorderThickness="0" Margin="10" Grid.Row="0" Click="Buy_Click"/>
+                <Button FontSize="40" Name="BuyFromBasket" Content="Buy From Basket" BorderThickness="0" Margin="10" Grid.Row="1" Click="BuyFromBasket_Click"/>
+                <Button FontSize="20" Name="Basket" Content="Put In A Basket" BorderThickness="0" Margin="10" Grid.Row="2" Click="Basket_Click"/>
+                <Button FontSize="40" Name="Sort" Content="Sort" BorderThickness="0" Margin="10" Grid.Row="3" Click="Sort_Click"/>
+                <Button FontSize="40" Name="Search" Content="Search" BorderThickness="0" Margin="10" Grid.Row="4" Click="Search_Click"/>
+                <Button FontSize="40" Name="SavePlate" Content="Save Plate" BorderThickness="0" Margin="10" Grid.Row="4" Click="SavePlate_Click"/>
+                <Button FontSize="30" Name="AT" Content="Admin Tools" BorderThickness="0" Margin="10" Grid.Row="5" Visibility="Hidden" Click="AT_Click"/>
+                <Button FontSize="35" Name="LogOut" Content="LogOut" BorderThickness="0" Margin="10" Grid.Row="6" Click="LogOut_Click"/>
+            </Grid>
+            <Grid x:Name="RightSort" Visibility="Hidden" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button FontSize="20" Name="New" Content="New" BorderThickness="0" Margin="10" Grid.Row="0" Click="New_Click"/>
+                <Button FontSize="20" Name="MoreSale" Content="More Sale" BorderThickness="0" Margin="10" Grid.Row="1" Click="MoreSale_Click"/>
+                <Button FontSize="20" Name="PopularAuthors" Content="Popular Authors" BorderThickness="0" Margin="10" Grid.Row="2" Click="PopularAuthors_Click"/>
+                <Button FontSize="20" Name="BasketSort" Content="Basket" BorderThickness="0" Margin="10" Grid.Row="3" Click="BasketSort_Click"/>
+                <Button FontSize="15" Name="PopularGenresPerDay" Content="Popular Genres Per Day" BorderThickness="0" Margin="10" Grid.Row="4" Click="PopularGenresPerDay_Click"/>
+                <Button FontSize="15" Name="PopularGenresPerWeek" Content="Popular Genres Per Week" BorderThickness="0" Margin="10" Grid.Row="5" Click="PopularGenresPerWeek_Click"/>
+                <Button FontSize="15" Name="PopularGenresPerMonth" Content="Popular Genres Per Month" BorderThickness="0" Margin="10" Grid.Row="6" Click="PopularGenresPerMonth_Click"/>
+                <Button FontSize="15" Name="PopularGenresPerYear" Content="Popular Genres Per Year" BorderThickness="0" Margin="10" Grid.Row="7" Click="PopularGenresPerYear_Click"/>
+                <Button FontSize="15" Name="NStandart" Content="Standart" BorderThickness="0" Margin="10" Grid.Row="8" Click="NStandart_Click"/>
+                <Button FontSize="20" Name="Back_Sort" Content="Back" BorderThickness="0" Margin="10" Grid.Row="9" Click="Back_Sort_Click"/>
+            </Grid>
+            <Grid Name="RightAT" Grid.Column="1" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button FontSize="20" Name="Add" Content="Add" BorderThickness="0" Margin="10" Grid.Row="0" Click="Add_Click"/>
+                <Button FontSize="20" Name="Remove" Content="Remove" BorderThickness="0" Margin="10" Grid.Row="1" Click="Remove_Click"/>
+                <Button FontSize="20" Name="Edit" Content="Edit" BorderThickness="0" Margin="10" Grid.Row="2" Click="Edit_Click"/>
+                <Button FontSize="20" Name="Sell" Content="Sell" BorderThickness="0" Margin="10" Grid.Row="3" Click="Sell_Click"/>
+                <Button FontSize="20" Name="Drop" Content="Drop" BorderThickness="0" Margin="10" Grid.Row="4" Click="Drop_Click"/>
+                <Button FontSize="20" Name="Discount" Content="Discount" BorderThickness="0" Margin="10" Grid.Row="5" Click="Discount_Click"/>
+                <Button FontSize="20" Name="DiscountGenre" Content="Discount Genre" BorderThickness="0" Margin="10" Grid.Row="6" Click="DiscountGenre_Click"/>
+                <Button FontSize="20" Name="Back_AT" Content="Back" BorderThickness="0" Margin="10" Grid.Row="7" Click="Back_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightAdd" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Adding" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <TextBox Text="Name" Grid.Row="1" Name="Name"/>
+                <TextBox Text="Count Of Trecks" Grid.Row="2" Name="CountOfTrecks"/>
+                <TextBox Text="Publish Year" Grid.Row="3" Name="PublishYear"/>
+                <TextBox Text="Local Price" Grid.Row="4" Name="LocalPrice"/>
+                <TextBox Text="Price" Grid.Row="5" Name="Price"/>
+                <TextBox Text="Sold Copies" Grid.Row="6" Name="SoldCopies"/>
+                <ComboBox Grid.Row="7" Name="GroupId"/>
+                <ComboBox Grid.Row="8" Name="MakerId"/>
+                <ComboBox Grid.Row="9" Name="GenreId"/>
+                <Button BorderThickness="0" x:Name="btnAdd" Margin="10" Content="Add" Grid.Row="10" Click="btnAdd_Click"/>
+                <Button BorderThickness="0" x:Name="btnBackAdd" Margin="10" Content="Back" Grid.Row="11" Click="btnBackAdd_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightEdit" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Editing" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <TextBox Grid.Row="1" Name="NameEdit"/>
+                <TextBox Grid.Row="2" Name="CountOfTrecksEdit"/>
+                <TextBox Grid.Row="3" Name="PublishYearEdit"/>
+                <TextBox Grid.Row="4" Name="LocalPriceEdit"/>
+                <TextBox Grid.Row="5" Name="PriceEdit"/>
+                <TextBox Grid.Row="6" Name="SoldCopiesEdit"/>
+                <ComboBox Grid.Row="7" Name="GroupIdEdit"/>
+                <ComboBox Grid.Row="8" Name="MakerIdEdit"/>
+                <Button BorderThickness="0" x:Name="btnEdit" Margin="10" Content="Edit" Grid.Row="10" Click="btnEdit_Click"/>
+                <Button BorderThickness="0" x:Name="btnBackEdit" Margin="10" Content="Back" Grid.Row="11" Click="btnBackEdit_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightDiscount" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Discounting" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <TextBox Margin="10" x:Name="DiscountPercent" Grid.Row="1"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscountRemove" Grid.Row="3" Content="Remove Discount" Click="btnDiscountRemove_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscount" Grid.Row="4" Content="Discount" Click="btnDiscount_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscount_Back" Grid.Row="5" Content="Back" Click="btnDiscount_Back_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightDiscountGenre" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Discounting Genre" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <TextBox Text="Percents" Margin="10" x:Name="DiscountPercentTwo" Grid.Row="1"/>
+                <TextBox Text="Genre" Margin="10" x:Name="DiscountGenreOne" Grid.Row="2"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscountRemoveTwo" Grid.Row="3" Content="Remove Discount" Click="btnDiscountRemoveTwo_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscountTwo" Grid.Row="4" Content="Discount Genre" Click="btnDiscountTwo_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnDiscount_Back_Two" Grid.Row="5" Content="Back" Click="btnDiscount_Back_Two_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightSearch" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label FontSize="30" Content="Searching" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <TextBox Text="Search Value" Margin="10" x:Name="SearchField" Grid.Row="1"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnNameDiskFind" Grid.Row="2" Content="Name Find" Click="btnNameDiskFind_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnMakerDiskFind" Grid.Row="3" Content="Maker Find" Click="btnMakerDiskFind_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnGenreDiskFind" Grid.Row="4" Content="Genre Find" Click="btnGenreDiskFind_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnBackDiskFind" Grid.Row="5" Content="Back" Click="btnBackDiskFind_Click"/>
+            </Grid>
+            <Grid Grid.Column="1" Name="RightSavePlate" Visibility="Hidden">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label FontSize="30" Content="Saving Plate" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnSavePlate" Grid.Row="1" Content="Save" Click="btnSavePlate_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnShowSavedPlates" Grid.Row="2" Content="Show Saved" Click="btnShowSavedPlates_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnCancelSavePlates" Grid.Row="3" Content="Cancel" Click="btnCancelSavePlates_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnBuySavePlates" Grid.Row="4" Content="Buy" Click="btnBuySavePlates_Click"/>
+                <Button BorderThickness="0" Margin="10" x:Name="btnBackSavePlates" Grid.Row="5" Content="Back" Click="btnBackSavePlates_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
